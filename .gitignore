@@ -1,0 +1,17 @@
+/node_modules/
+/migrations/1634823297019_barang.js
+/migrations/1634823308380_transaksi.js
+/migrations/1635007481006_items.js
+/migrations/1635007494908_transactions.js
+/src/api/barang/
+/src/api/items/
+/src/api/transactions/
+/src/api/transaksi/
+/src/services/inMemory/
+/src/services/postgres/ItemsService.js
+/src/services/postgres/TransactionsService.js
+/src/utils/item.js
+/src/utils/transactiion.js
+/src/validator/barang/
+/src/validator/item/
+/src/validator/transaction/
