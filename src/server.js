@@ -8,8 +8,14 @@ const users = require('./api/users');
 const UsersService = require('./services/postgres/UsersService');
 const UsersValidator = require('./validator/users');
 
+// chat
+const chats = require('./api/chat');
+const ChatsService = require('./services/postgres/chatService');
+const ChatsValidator = require('./validator/chat');
+
 const init = async () => {
   const usersService = new UsersService();
+  const chatsService = new ChatsService();
 
   const server = Hapi.Server({
     port: process.env.PORT,
@@ -27,6 +33,13 @@ const init = async () => {
       options: {
         service: usersService,
         validator: UsersValidator,
+      },
+    },
+    {
+      plugin: chats,
+      options: {
+        service: chatsService,
+        validator: ChatsValidator,
       },
     },
   ]);
