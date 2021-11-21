@@ -7,15 +7,14 @@
 /src/api/items/
 /src/api/transactions/
 /src/api/transaksi/
-/src/api/chat/
+
 /src/services/inMemory/
 /src/services/postgres/ItemsService.js
 /src/services/postgres/TransactionsService.js
-/src/services/postgres/chatService.js
+
 /src/utils/
 /src/utils/item.js
 /src/utils/transactiion.js
 /src/validator/barang/
 /src/validator/item/
 /src/validator/transaction/
-/src/validator/chat/

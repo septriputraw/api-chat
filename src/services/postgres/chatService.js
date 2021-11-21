@@ -22,26 +22,26 @@ class chatService {
       values: [id],
     };
 
-    const result = this._pool.query(query);
+    const result = await this._pool.query(query);
 
-    if (!(await result).rowCount) {
+    if (!result.rows.length) {
       console.log('Data chat tidak ditemukan');
     }
-    return (await result).rows.map(mapDBToModelChat)[0];
+    return result.rows.map(mapDBToModelChat)[0];
   }
 
   async getChatByReceiver(to) {
     const query = {
-      text: 'SELECT * FROM chats WHERE to = $1',
+      text: 'SELECT from, message FROM chats WHERE to = $1',
       values: [to],
     };
 
-    const result = this._pool.query(query);
+    const result = await this._pool.query(query);
 
-    if (!(await result).rowCount) {
+    if (!result.rows.length) {
       console.log('Data chat tidak ditemukan');
     }
-    return (await result).rows.map(mapDBToModelChat)[0];
+    return result.rows.map(mapDBToModelChat)[0];
   }
 
   async sendChat({
@@ -56,11 +56,11 @@ class chatService {
       values: [id, from, to, message, statusMessage, insertedAt, updatedAt],
     };
 
-    const result = this._pool.query(query);
-    if (!(await result).rows[0].id) {
+    const result = await this._pool.query(query);
+    if (!result.rows[0].id) {
       return 'Pesan gagal dikirim';
     }
-    return (await result).rows[0].id;
+    return result.rows[0].id;
   }
 }
 
