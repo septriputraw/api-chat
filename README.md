@@ -6,21 +6,31 @@ simple API
 ## PostgreSQL
 
 # Running
-run npm install
-
-npm run migrate up
-
-npm run start-dev 
+*run npm install
+*npm run migrate up
+*npm run start-dev 
 
 # End-Points
-## users
-### POST /users
-### GET /users/{id}
-## authentications
-### POST /authentications
-### PUT /authentications
-### DELETE /authentications
-## chat
-### POST /chat/send
-### GET /chat
-### GET /chat/{id}
+<p>users</p>
+<div>
+ <ul>
+  <li>POST /users</li>
+  <li>GET /users/{id}</li>
+ </ul>
+</div>
+<p>authentications</p>
+<div>
+<ul>
+  <li>POST /authentications</li>
+  <li>PUT /authentications</li>
+  <li>DELETE /authentications</li>
+</ul>
+  </div>
+<p> chat </p>
+<div>
+<ul>
+  <li>POST /chat/send</li>
+  <li>GET /chat</li>
+  <li>GET /chat/{id}</li>
+</ul>
+  </div>
