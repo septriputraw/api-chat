@@ -2,7 +2,7 @@
 simple API 
 
 # Requirements
-## NodeJs v14+
+## Node.js v14+
 ## PostgreSQL
 
 # Running
