@@ -2,13 +2,17 @@
 simple API 
 
 # Requirements
-## Node.js v14+
-## PostgreSQL
+<ul>
+<li>Node.js v14+</li>
+<li>PostgreSQL</li>
+</ul>
 
 # Running
-*run npm install
-*npm run migrate up
-*npm run start-dev 
+<ul>
+ <li>run npm install</li>
+ <li>npm run migrate up</li>
+ <li>npm run start-dev</li> 
+</ul>
 
 # End-Points
 <p>users</p>
