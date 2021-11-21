@@ -9,9 +9,9 @@ simple API
 
 # Running
 <ul>
- <li>run npm install</li>
- <li>npm run migrate up</li>
- <li>npm run start-dev</li> 
+ <li>1. npm install</li>
+ <li>2. npm run migrate up</li>
+ <li>3. npm run start-dev</li> 
 </ul>
 
 # End-Points
