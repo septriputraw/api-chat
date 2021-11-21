@@ -15,18 +15,18 @@ const routes = (handler) => [
       auth: 'chatsapp_jwt',
     },
   },
-  /* {
-    method: 'GET',
-    path: '/chat/{id}/list',
-    handler: handler.getChatByIdHandler,
-  }, */
   {
     method: 'GET',
     path: '/chat/{id}',
-    handler: handler.getChatByReceiverHandler,
+    handler: handler.getChatByIdHandler,
     options: {
       auth: 'chatsapp_jwt',
     },
+  },
+  {
+    method: 'GET',
+    path: '/chat/list/{to}',
+    handler: handler.getChatByReceiverHandler,
   },
 ];
 

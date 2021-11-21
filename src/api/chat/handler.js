@@ -10,8 +10,10 @@ class ChatHandler {
     this.getChatByReceiverHandler = this.getChatByReceiverHandler.bind(this);
   }
 
-  async getChatHandler() {
-    const chat = await this._service.getChat();
+  async getChatHandler(request) {
+    // add credential user logged in
+    const { id: credentialId } = request.auth.credentials;
+    const chat = await this._service.getChat(credentialId);
     return {
       status: 'success',
       data: {
@@ -22,6 +24,10 @@ class ChatHandler {
 
   async getChatByIdHandler(request) {
     const { id } = request.params;
+    const { id: credentialId } = request.auth.credentials;
+    await this._service.verifyChatOwner(id, credentialId);
+    // await this._service.verifyChatisRead(id, credentialId);
+    // await this._service.verifyChatOwner(id, credentialId);
     const chatId = await this._service.getChatById(id);
     return {
       status: 'success',
@@ -32,8 +38,8 @@ class ChatHandler {
   }
 
   async getChatByReceiverHandler(request) {
-    const { name } = request.params;
-    const chat = await this._service.getChatByReceiver(name);
+    const { to } = request.params;
+    const chat = await this._service.getChatByReceiver(to);
     return {
       status: 'success',
       data: {
@@ -46,13 +52,14 @@ class ChatHandler {
     this._validator.validateChatPayload(request.payload);
 
     const {
-      from,
       to,
       message,
     } = request.payload;
 
+    const { id: credentialId } = request.auth.credentials;
+
     const chatId = await this._service.sendChat({
-      from,
+      from: credentialId,
       to,
       message,
     });
