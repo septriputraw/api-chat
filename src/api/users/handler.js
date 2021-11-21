@@ -33,24 +33,15 @@ class UsersHandler {
     }
   }
 
-  async getUserByIdHandler(request, h) {
-    try {
-      const { id } = request.params;
-      const user = await this._service.getUserById(id);
-      return {
-        status: 'success',
-        data: {
-          user,
-        },
-      };
-    } catch (error) {
-      const response = h.response({
-        status: 'fail',
-        message: error.message,
-      });
-      response.code(error.statusCode);
-      return response;
-    }
+  async getUserByIdHandler(request) {
+    const { id } = request.params;
+    const user = await this._service.getUserById(id);
+    return {
+      status: 'success',
+      data: {
+        user,
+      },
+    };
   }
 }
 
