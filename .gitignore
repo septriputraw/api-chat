@@ -12,7 +12,6 @@
 /src/services/postgres/ItemsService.js
 /src/services/postgres/TransactionsService.js
 
-/src/utils/
 /src/utils/item.js
 /src/utils/transactiion.js
 /src/validator/barang/
