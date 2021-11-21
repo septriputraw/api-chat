@@ -3,7 +3,7 @@ simple API
 
 # Requirements
 ## NodeJs v14+
-## Postgres
+## PostgreSQL
 
 # Running
 run npm install
